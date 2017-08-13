@@ -1,0 +1,21 @@
+
+public class EuclidianAlgorithim {
+	
+	public static void main(String[] args) {
+		long a = 600851475143;
+		int b = 0;
+		int gcd = euclidianAlgorithim(a,b);
+		System.out.println(gcd);
+	}
+	
+	public static int euclidianAlgorithim(long a, int b) {
+		int r = a%b;
+		if(r == 0) {
+			return b;
+		}
+		else {
+			return euclidianAlgorithim(b, r);
+		}
+	}
+
+}

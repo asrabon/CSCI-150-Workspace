@@ -1,0 +1,44 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class RectangleFrame extends JFrame {
+
+	private final int FRAMEWIDTH = 1920;
+	private final int FRAMEHEIGHT = 1080;
+	private RectangleComponent scene;
+	private RectangleComponent scene1;
+	private JPanel panel;
+	
+	class TimerListener implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			if(scene.getX() > (FRAMEWIDTH / 2) - 200) {
+				System.exit(0);
+			}
+			//System.out.println(FRAMESIZE.getWidth());
+			System.out.println(scene.getX());
+			scene.moveRectangleBy(1, 0);
+			//scene1.moveRectangleBy(-1, 0);
+		}
+	}
+	
+	public RectangleFrame() {
+		panel = new JPanel();
+		scene = new RectangleComponent(60, 60);
+		this.add(scene);
+		scene1 = new RectangleComponent(200, 200);
+		//this.add(scene1);
+		setSize(FRAMEWIDTH, FRAMEHEIGHT);
+		ActionListener listener = new TimerListener();
+		
+		final int DELAY = 3;
+		Timer t = new Timer(DELAY, listener);
+		t.start();
+	}
+	
+}

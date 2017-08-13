@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Honors_Project1_AnthonyRabon_10-20-16/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;Program5_AnthonyRabon_10-12-16&apos;&#x0D;&#x0A;- Destination element: &apos;Honors_Project1_AnthonyRabon_10-20-16/src/(default package)&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Mailbox.java&#x0D;&#x0A;     MailSystem.java&#x0D;&#x0A;     Message.java" description="Copy compilation units" destination="=Honors_Project1_AnthonyRabon_10-20-16/src&lt;" element1="/src&lt;{Mailbox.java" element2="/src&lt;{MailSystem.java" element3="/src&lt;{Message.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1476979813519" units="3" version="1.0"/>
+</session>

@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+public class EuclidianAlgorithim {
+	
+	public static void main(String[] args) {
+		long a = 600851475143L;
+		ArrayList<Long> gcd = new ArrayList<Long>();
+		for(int i = 0; i < 50000000; i++) {
+			gcd.add(euclidianAlgorithim(a,i));
+		}
+		long max = 0;
+		for(int i = 0; i < gcd.size(); i++) {
+			if(gcd.get(i) > max) {
+				max = gcd.get(i);
+			}
+		}
+		System.out.println(gcd);
+	}
+	
+	public static long euclidianAlgorithim(long a, long b) {
+		long r = a%b;
+		if(r == 0) {
+			return b;
+		}
+		else {
+			return euclidianAlgorithim(b, r);
+		}
+	}
+
+}

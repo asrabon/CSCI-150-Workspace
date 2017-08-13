@@ -1,0 +1,60 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.OverlayLayout;
+
+public class RectangleFrame extends JFrame {
+	
+	//final integer variable that will be used to set the size of the window
+	private final int FRAMEWIDTH = 1920;
+	private final int FRAMEHEIGHT = 1080;
+	
+	private final int END_OF_WINDOW = (FRAMEWIDTH / 2) - 250;
+	
+	//creates variables that will be used in the GUI
+	private RectangleComponent scene;
+	private RectangleComponent scene1;
+	private JPanel panel;
+
+	/**
+	 * @className TimerListener
+	 *
+	 *Inner class that executes the code within the class anytime the another 3 millisecond is added to the timer
+	 */
+	class TimerListener implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			//if the car is past the size of the window then closes the program
+			if(scene.getX() >  END_OF_WINDOW){
+				System.exit(0);
+			}
+			//otherwise moves one car to the right by 1 pixel and the other to the left by 1 pixel
+			scene.moveRectangleBy(1, 0);
+			scene1.moveRectangleBy(-1, 0);
+		}
+	}
+	
+	/**
+	 * constructor that creates two of the car objects and places them within the window at opposite corners
+	 */
+	public RectangleFrame() {
+		//creates panel that will contain both car objects
+		panel = new JPanel();
+		panel.setLayout(new OverlayLayout(panel));
+		//creates first car object and adds to the panel
+		scene = new RectangleComponent(10, 50);
+		panel.add(scene);
+		//creates second car object and adds to the panel
+		scene1 = new RectangleComponent(575, 285);
+		panel.add(scene1);
+		add(panel);
+		setSize(FRAMEWIDTH, FRAMEHEIGHT);//set the size of the window the final variables defined at the beginning
+		ActionListener listener = new TimerListener();//creates a timer listener that will preform some action when the timer counts so far
+		
+		final int DELAY = 3;
+		Timer t = new Timer(DELAY, listener);//creates a timer object that uses the TimerListener with a delay of 3 milliseconds 
+		t.start();//starts the timer
+	}
+	
+}

@@ -1,0 +1,47 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+/**
+ * 
+ * @programName Program 2
+ * @class CSCI 150
+ * @programmer Anthony Rabon
+ * @lastRevised 9-13-16
+ *
+ *The purpose of this program is to have a bug object that the user can tell to turn, move 1 position, get the current position, or quit
+ *
+ */
+
+public class Prog2 {
+	
+	public static void main (String[] args) {
+		Scanner in = new Scanner(System.in);
+		Bug movingBug = new Bug(10);
+		char userInput = getUserInput(in);
+		while(userInput != 'q') {
+			if(userInput == 't') {
+				movingBug.turn();
+			}
+			else if(userInput == 'm') {
+				movingBug.move();
+			}
+			else {
+				System.out.println("Position of bug: " + movingBug.getPosition());
+			}
+			userInput = getUserInput(in);
+		}
+	}
+	
+	public static char getUserInput (Scanner in) {
+		char c = 'a';
+		do {
+			System.out.print(" t: turn \n m: move \n g: get position \n q: quit \n");
+			c = in.next().charAt(0);
+			if (c != 't' || c!= 'm' || c != 'g' || c != 'q') {
+				System.out.println("Error: you must enter one of the options that was printed out");
+			}
+		}while(c != 't' && c!= 'm' && c != 'g' && c != 'q');
+		return c;
+	}
+
+}

@@ -1,0 +1,34 @@
+
+public class Bug {
+	
+	private int position;
+	private String direction;
+	
+	public Bug(int initialPosition) {
+		position = initialPosition;
+		direction = "right";
+	}
+	
+	public void turn() { 
+		if (direction.equals("right")) {
+			direction = "left";
+		}
+		else {
+			direction = "right";
+		}
+	}
+	
+	public void move() {
+		if (direction.equals("right")) {
+			position++;
+		}
+		else {
+			position--;
+		}
+	}
+	
+	public int getPosition() {
+		return position;
+	}
+
+}

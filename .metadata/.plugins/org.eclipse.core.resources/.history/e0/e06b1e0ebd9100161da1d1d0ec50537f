@@ -1,0 +1,12 @@
+
+public class Prog5 {
+	
+	public static void main(String[] args) {		
+	}
+	
+	public char getUserInput () {
+		System.out.println("L)og In    W)rite message    I)nbox   S)ent Mail    O)ff—Log Out     E)xit");
+		
+	}
+
+}

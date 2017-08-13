@@ -1,0 +1,15 @@
+
+public class Assignment08 {
+	
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	static final String url = "jdbc:mysql://127.0.0.1:3306/dbNameHere";
+	
+	   //  Database credentials
+	   static final String USER = "username";
+	   static final String PASS = "password";
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
